@@ -1,7 +1,7 @@
 import cpp
 
-from FunctionCall fcn, Function f 
+from Macro M, MacroInvocation minv
 where 
-fcn.getTarget() = f and
-f.hasName("memcpy")
-select fcn
+minv.getMacro() = M and
+M.getName() in ["ntohs","ntohll","ntohl"]
+select minv
