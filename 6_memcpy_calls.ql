@@ -1,5 +1,7 @@
 import cpp
 
-from MacroInvocation mi
-where mi.getMacro().getName().regexpMatch("ntoh(s|l|ll)")
-select mi
+from FunctionCall fcn, Function f 
+where 
+fcn.getTarget() = f and
+f.hasName("memcpy")
+select fcn
