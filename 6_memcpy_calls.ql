@@ -3,5 +3,5 @@ import cpp
 from Macro M, MacroInvocation minv
 where 
 minv.getMacro() = M and
-M.getName() in ["ntohs","ntohll","ntohl"]
-select minv,"URL for minv"
+M.getName().matches("ntoh%")
+select minv, "a macro named ntoh*"
