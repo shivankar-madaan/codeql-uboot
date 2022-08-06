@@ -1,7 +1,5 @@
 import cpp
 
-from Macro M, MacroInvocation minv
-where 
-minv.getMacro() = M and
-M.getName().matches("ntoh%")
-select minv, "a macro named ntoh*"
+from MacroInvocation mi
+where mi.getMacro().getName().regexpMatch("ntoh(s|l|ll)")
+select mi
